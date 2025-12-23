@@ -19,10 +19,10 @@ class Musician(models.Model):
     def clean(self):
         if not (self.age >= 14):
             raise ValidationError(
-                f"{self.first_name} {self.last_name} age must be greater than 14"
+                f"{self.first_name} {self.last_name} "
+                f"age must be greater than 14"
             )
 
     def save(self, *args, **kwargs):
         self.full_clean()
         return super().save(*args, **kwargs)
-

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from musician.models import Musician
 
+
 class MusicianSerializer(serializers.ModelSerializer[Musician]):
     class Meta:
         model = Musician
